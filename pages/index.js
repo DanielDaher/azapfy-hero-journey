@@ -1,18 +1,17 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import HeroesProvider from '@/context/HeroesContext';
+import Dashboard from '@/components/Dashboard';
 
 export default function Home() {
   return (
-    <>
+    <HeroesProvider>
       <Head>
         <title>Azapfy Hero Journey</title>
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
+      <main className={`${styles.main}`}> 
+        <Dashboard />
       </main>
-    </>
+    </HeroesProvider>
   )
 }
