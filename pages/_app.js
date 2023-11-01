@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
-import theme from '../config/theme';
+import { darkTheme } from '../config/theme';
 import createEmotionCache from '../config/createEmotionCache';
 
 // https://medium.com/frontendweb/how-to-use-material-ui-with-nextjs-and-react-18-6c054ceacf77
@@ -17,7 +17,7 @@ export default function MyApp(props) {
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>
