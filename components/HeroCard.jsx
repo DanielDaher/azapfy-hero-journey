@@ -1,9 +1,10 @@
-import * as React from "react";
+import { useContext } from "react";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
+import { CardActionArea } from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import CardContent from "@mui/material/CardContent";
+import { HeroesContext } from "@/context/HeroesContext";
 const LIMIT_OF_STRING_CHARACTERS = 100;
 
 export default function HeroCard(props) {
@@ -16,8 +17,11 @@ export default function HeroCard(props) {
     },
   } = props;
 
+  const { selectNewHero } = useContext(HeroesContext);
+
+
   return (
-    <Card sx={{ width: 400 }}>
+    <Card sx={{ width: 400 }} onClick={() => selectNewHero(props.heroData)}>
       <CardActionArea>
         <CardMedia
           component="img"

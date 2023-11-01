@@ -1,11 +1,12 @@
-import HeroCard from '@/components/HeroCard';
 import Loading from './Loading';
+import BattleModal from './BattleModal';
+import HeroCard from '@/components/HeroCard';
 import styles from '@/styles/Home.module.css';
 import { HeroesContext } from "@/context/HeroesContext";
 import { useEffect, useState, useContext } from "react";
 
 export default function Dashboard() {
-  const { heroesData, setHeroesData, fetchData } = useContext(HeroesContext);
+  const { heroesData, selectedHeroes, fetchData } = useContext(HeroesContext);
 
   useEffect(() => {
     if (!heroesData.length) {
@@ -25,6 +26,7 @@ export default function Dashboard() {
   return (
     <div>
       { heroesData.length ? <RenderHeroCards /> : <Loading /> }
+      { selectedHeroes.length === 2 ? <BattleModal /> : '' }
     </div>
   );
 
