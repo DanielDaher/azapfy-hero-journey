@@ -1,6 +1,8 @@
 import axios from 'axios';
+require('dotenv').config();
 
-axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL || 'http://homologacao3.azapfy.com.br/api/ps/metahumans'; // instalar dotenv depois
+
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
 
 export const getHeroes = async () => {
   const apiUrl = `${axios.defaults.baseURL}`;
