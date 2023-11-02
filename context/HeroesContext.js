@@ -5,6 +5,7 @@ export const HeroesContext = createContext();
 
 export default function HeroesProvider(props) {
   const [ heroesData, setHeroesData ] = useState([]);
+  const [ selectedHeroes, setSelectedHeroes ] = useState([]);
   
   const fetchData = async () => {
     try {
@@ -16,8 +17,21 @@ export default function HeroesProvider(props) {
     }
   }
 
+  const selectNewHero = (heroInformation) => {
+    if (selectedHeroes.length < 2) {
+      const sameCharacter = selectedHeroes[0] === heroInformation;
+      if (sameCharacter) return;
+      const heroes = [ ...selectedHeroes, heroInformation ]
+      setSelectedHeroes(heroes);
+    }
+  }
+
   return (
-    <HeroesContext.Provider value={{ heroesData, setHeroesData, fetchData }}>
+    <HeroesContext.Provider value={
+      { 
+        heroesData, selectedHeroes, setSelectedHeroes, selectNewHero, fetchData 
+      }}
+    >
       { props.children }
     </HeroesContext.Provider>
   );

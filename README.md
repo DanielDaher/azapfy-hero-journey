@@ -1,40 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Azapfy Hero Journey
+Boas vindas à Azapfy Hero Journey, o site onde o usuário pode selecionar dois heróis e ver quem vence a batalha!
 
-## Getting Started
+## Objetivos:
 
-First, run the development server:
+O objetivo é desenvolver uma aplicação web que abrace a temática de heróis e, ao mesmo tempo, permita que o usuário busque heróis, selecione-os e compare quem é mais forte.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Como rodar a aplicação no computador:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Seu computador precisa de Git (para versionamento do código), Node.js & npm (para executar a aplicação). Clique nos links, caso ainda não tenha instalado algum desses:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+ - [ ] [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+ - [ ] [Node.js e npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Instalando a aplicação:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. Primeiro, abra um novo terminal e clone o repositório utilizando o comando 
+`git clone git@github.com:DanielDaher/azapfy-hero-journey.git`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. Em seguida, digite `cd azapfy-hero-journey` para entrar no diretório (pasta) do projeto, que acabou de ser criada.
 
-## Learn More
+3. Instale as dependências com `npm install`
 
-To learn more about Next.js, take a look at the following resources:
+4. Crie um arquivo com o nome `.env` e coloque as seguintes variáveis (uma por linha):
+  `NEXT_PUBLIC_API_URL=http://homologacao3.azapfy.com.br/api/ps/metahumans`
+ Salve as modificações!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Ao término da etapa anterior, rode no terminal `npm run dev`. Isto pode demorar alguns segundos, aguarde até que o terminal te informe `Local: http://localhost:3000`. Então você pode clicar nesta url ou abrir seu navegador e digitar http://localhost:3000.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+6. E agora é só desfrutar do site!
 
-## Deploy on Vercel
+## Como usar o site?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+O site exibe, incialmente, uma tela de loading, enquanto as informações são buscadas da API.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Em seguida, a tela apresentará um input de busca e diversos cards com personagens. O usuário pode selecionar dois, o que abrirá um modal comparando ambos e mostrando quem é mais forte.
+
+Para selecionar outros personagens, basta fechar o modal clicando em qualquer espaço vago da tela.
+
+Existe um alert na tela que passa informações ao usuário, ensinando-o a usar a aplicação.
