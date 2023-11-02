@@ -63,10 +63,12 @@ export default function HeroCard(props) {
       {
         selectedHeroes.find((el) => el.name === name) ? (
           <CheckBoxIcon
+            onClick={() => selectNewHero(props.heroData)}
             sx={checkboxIconStyle}
           />
         ) : (
           <CheckBoxOutlineBlankIcon
+            onClick={() => selectNewHero(props.heroData)}
             sx={checkboxIconStyle}
           />
       )}
