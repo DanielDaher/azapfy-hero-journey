@@ -40,7 +40,7 @@ export default function Dashboard() {
 
   const AlertMessageType = () => {
     const firstHeroSelected = selectedHeroes[0]?.name;
-    const NEXT_STEP_MESSAGE = `Você selecionou o ${firstHeroSelected}, selecione mais um personagem`;
+    const NEXT_STEP_MESSAGE = `Você selecionou ${firstHeroSelected}, selecione mais um personagem`;
     const TUTORIAL_MESSAGE = "Selecione dois personagens e veja quem vence!";
     const errorMessage = 'Nenhum herói encontrado com este nome';
     const tutorialMessage = selectedHeroes.length === 1 ? NEXT_STEP_MESSAGE : TUTORIAL_MESSAGE;
