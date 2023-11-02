@@ -5,11 +5,12 @@ import TextField from '@mui/material/TextField';
 const formStyle = {
   position: 'fixed',
   top: '0',
-  width: '100vw',
+  width: '100%',
   zIndex: 1,
   backgroundColor: '#121212',
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'flex-end',
+  paddingRight: '15em',
   gap: '1.2em',
 };
 

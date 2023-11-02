@@ -7,8 +7,6 @@ import styles from '@/styles/Home.module.css';
 import Snackbar from '@mui/material/Snackbar';
 import { HeroesContext } from "@/context/HeroesContext";
 import { useEffect, useState, useContext } from "react";
-const TUTORIAL_MESSAGE = "Selecione dois personagens e veja quem vence!";
-const NEXT_STEP_MESSAGE = "Selecione mais um personagem";
 
 export default function Dashboard() {
   const { heroesData, selectedHeroes, fetchData } = useContext(HeroesContext);
@@ -41,12 +39,17 @@ export default function Dashboard() {
   }
 
   const AlertMessageType = () => {
-    const tutorialMessage = selectedHeroes.length === 1 ? NEXT_STEP_MESSAGE : TUTORIAL_MESSAGE;
+    const firstHeroSelected = selectedHeroes[0]?.name;
+    const NEXT_STEP_MESSAGE = `Você selecionou o ${firstHeroSelected}, selecione mais um personagem`;
+    const TUTORIAL_MESSAGE = "Selecione dois personagens e veja quem vence!";
     const errorMessage = 'Nenhum herói encontrado com este nome';
-    if (!currentHeroes.length) return;
+    const tutorialMessage = selectedHeroes.length === 1 ? NEXT_STEP_MESSAGE : TUTORIAL_MESSAGE;
+
+    if (!heroesData.length || selectedHeroes.length > 1) return;
+    
     return (
       <Snackbar
-        open={selectedHeroes.length < 2}
+        open={true}
         anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
       >
         <Alert 
