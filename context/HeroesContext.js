@@ -20,7 +20,7 @@ export default function HeroesProvider(props) {
   const selectNewHero = (heroInformation) => {
     if (selectedHeroes.length < 2) {
       const sameCharacter = selectedHeroes[0] === heroInformation;
-      if (sameCharacter) return;
+      if (sameCharacter) return setSelectedHeroes([]);
       const heroes = [ ...selectedHeroes, heroInformation ]
       setSelectedHeroes(heroes);
     }
